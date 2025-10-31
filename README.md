@@ -1,0 +1,1 @@
+Creative and detail-oriented professional with a strong portfolio showcasing diverse projects in design, development, and innovation. Skilled in problem-solving, teamwork, and modern tools. Experienced across multiple domains with a solid educational background and proven ability to deliver high-quality, impactful results.

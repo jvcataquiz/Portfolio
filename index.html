@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerick Cataquiz Portfolio</title>
+
+    <link rel="icon"
+        href="https://static.vecteezy.com/system/resources/previews/000/356/693/original/portfolio-vector-icon.jpg"
+        type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                    <span class="icon">🌙</span>
+                    <span class="label">Dark Mode</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>I'm <span class="typing-text" id="typingText">Jerick Cataquiz</span></h1>
+            <p>A graduate of the <span class="graduate"> <a href="https://www.pup.edu.ph/" target="_blank">Polytechnic
+                        University of the Philippines </a> </span></p>
+            <div class="social1234234">
+                <a target="_blank" href="https://github.com/jvcataquiz?tab=repositories"><i
+                        class="fa-brands fa-github"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/jerick-vegile-m-cataquiz/"><i
+                        class="fa-brands fa fa-linkedin"></i></a>
+                <a target="_blank" href="https://www.facebook.com/jv.cataquiz14/"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" href="https://codepen.io/jvcataquiz"><i class="fa-brands fa-codepen"></i></a>
+                <a target="_blank" href="https://www.freecodecamp.org/jvcataquiz"><i
+                        class="fa-brands fa-free-code-camp"></i></a>
+            </div>
+            <button type="button" class="cta-button" data-toggle="modal" data-target="#myModal"
+                data-whatever="Cert1">View My Resume</button>
+            </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-image-wrapper">
+                        <img src="image/jerick.jpeg?w=400&h=400&fit=crop"
+                            alt="Developer" class="about-image"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="developer-illustration" style="display: none;">
+                            👨‍💻
+                            <div class="floating-elements">
+                                <div class="floating-icon">💻</div>
+                                <div class="floating-icon">🚀</div>
+                                <div class="floating-icon">⚡</div>
+                                <div class="floating-icon">🎨</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Hello! I'm Jerick</h3>
+                    <p>I'm a passionate <b>Java Developer, Software Engineer, and Senior Analyst</b> with over 3 years
+                        of experience building robust and scalable software solutions across diverse industries. My
+                        professional journey spans the <b>gaming industry (Chinese client – Innovations Group),
+                            financial services (Japanese client – Aflac), and local banking (Metrobank) and financial
+                            (Sun Life) </b>sectors in the Philippines, giving me a well-rounded understanding of global
+                        business and technical landscapes.</p>
+                    <p>My journey in tech started with a curiosity about how things work on the web, and it has evolved
+                        into a career where I get to blend creativity with technology every day. I'm constantly learning
+                        new technologies and staying up-to-date with industry trends to deliver cutting-edge solutions.
+                    </p>
+                    <p>When I'm not coding, you can find me exploring new design trends, contributing to open-source
+                        projects, or sharing knowledge with the developer community.</p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Senior Full-Stack Developer</h3>
+                        <h4>Tech Innovations Inc.</h4>
+                        <p>Leading development of enterprise-level web applications using React, Node.js, and cloud
+                            technologies. Mentoring junior developers and implementing best practices for code quality
+                            and performance optimization.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2022</div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Developer</h3>
+                        <h4>Digital Solutions Ltd.</h4>
+                        <p>Developed and maintained multiple client projects, focusing on responsive web design and API
+                            integration. Collaborated with designers and product managers to deliver high-quality
+                            solutions on time.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Junior Web Developer</h3>
+                        <h4>Creative Web Agency</h4>
+                        <p>Started my professional journey building websites and web applications. Gained hands-on
+                            experience with modern web technologies and agile development methodologies.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">🎓</div>
+                    <h3>Bachelor of Science in Computer Engineer</h3>
+                    <h4>Polytechnic University of the Philippines</h4>
+                    <p class="education-year">2017 - 2022</p>
+                    <p class="text">
+                        Focus on software engineering, algorithms, and web technologies. Completed final year project on
+                        machine learning applications in web development.
+                    </p>
+                    <span class="toggleRead" style="cursor: pointer;">... Read more</span>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">📜</div>
+                    <h3>Back End Web Development 101 Bootcamp</h3>
+                    <h4>Bayan Academy</h4>
+                    <p class="education-year">September 26, 2022 – October 13, 2022</p>
+
+                    <p class="text">
+                        Learn how to use Node Js, Express Js and MongoDb.
+                        Develop a Final Project Website using Node, Express and NoSQL and stored in GitHub.
+                    </p>
+                    <span class="toggleRead" style="cursor: pointer;">... Read more</span>
+
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">🏆</div>
+                    <h3>Spring Security 6 Zero to Master along with JWT,OAUTH2 - 25 hours</h3>
+                    <h4>Udemy</h4>
+                    <p class="education-year">2025</p>
+                    <p class="text">
+                        Master Spring Security 6 with JWT and OAuth2. Learn to secure Java applications, protect REST
+                        APIs, and implement authentication and authorization for modern, scalable systems.
+                    </p>
+                    <span class="toggleRead" style="cursor: pointer;">... Read more</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">Java Featured Projects: <span id="repoCount">Loading...</span></h2>
+        <div class="carousel-container">
+            <button class="carousel-nav prev" onclick="scrollCarousel('featured', -1)">‹</button>
+            <div class="carousel" id="featured-carousel">
+            </div>
+            <button class="carousel-nav next" onclick="scrollCarousel('featured', 1)">›</button>
+            <div class="carousel-indicators" id="featured-indicators"></div>
+        </div>
+    </section>
+    <div class="container">
+        <!-- Trigger the modal with a button -->
+        <!-- Modal -->
+        <section class="centerdiv">
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- <h5 class="modal-title" id="exampleModalLabel"></h5> -->
+                        <div class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+    </div>
+    <footer id="contact">
+        <p>&copy; 2025 Jerick Cataquiz Portfolio. All rights reserved.</p>
+    </footer>
+    <script src="script/script.js"></script>
+    <script src="script/resume.js"></script>
+    <script src="script/fetchRepos.js"></script>
+</body>
+
+</html>
+``` 
