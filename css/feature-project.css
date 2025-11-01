@@ -1,0 +1,174 @@
+.projects-section {
+  padding: 5rem 5%;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: visible; /* allows buttons to show */
+  width: 100%;
+  z-index: 1;
+}
+
+/* The carousel (scroll area) */
+.carousel {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.4s ease;
+  scroll-behavior: smooth;
+  z-index: 2;
+}
+
+/* === Project Cards === */
+.project-card1 {
+  flex: 0 0 calc((100% - 2 * 1.5rem) / 3); /* 3 cards per view on desktop */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.project-card1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(244, 67, 54, 0.3);
+  border-color: #f44336;
+}
+
+/* Project content styling */
+.project-image {
+  border-radius: 15px;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.project-content {
+  text-align: left;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.4rem 0.8rem;
+  background: rgba(244, 67, 54, 0.2);
+  border: 1px solid #f44336;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #ff6b6b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.tag:hover {
+  background: #f44336;
+  color: #fff;
+}
+
+/* === Navigation Buttons === */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  z-index: 100; /* makes buttons clickable above cards */
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.carousel-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.tag1 {
+    flex: 1;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+.carousel-nav.prev { left: 0.5rem; }
+.carousel-nav.next { right: 0.5rem; }
+
+/* === Responsive (Mobile) === */
+@media (max-width: 480px) {
+  .project-card1 {
+    flex: 0 0 100%; /* 1 card per view */
+  }
+}
+
+/* === Responsive (Mobile) === */
+@media (max-width: 480px) {
+  .project-card1 {
+    flex: 0 0 100%; /* 1 card per view */
+  }
+}
+
+.carousel {
+  overflow-x: auto;                /* enable horizontal scroll */
+  scroll-snap-type: x mandatory;   /* snap cards cleanly into view */
+  scroll-behavior: smooth;         /* smooth scrolling */
+  scrollbar-width: none;           /* hide scrollbar (Firefox) */
+  -ms-overflow-style: none;        /* hide scrollbar (Edge/IE) */
+}
+.carousel::-webkit-scrollbar { display: none; } /* hide scrollbar (Chrome/Safari) */
+
+.project-card1 {
+  scroll-snap-align: start;        /* snap point for each card */
+}
+
+.carousel-container {
+  z-index: 1;                      /* make sure buttons appear correctly */
+}
+
+.carousel-nav {
+  z-index: 100;                    /* keep buttons on top */
+}

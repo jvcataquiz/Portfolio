@@ -44,7 +44,7 @@ document.addEventListener('click', function (event) {
 });
 
 // Typing animation
-const roles = ['Jerick Cataquiz', 'a Java Developer', 'a Software Engineer', 'a Senior Analyst', 'a Computer Engineer', 'a PUPian'];
+const roles = ['Java Developer', 'Software Engineer', 'Senior Analyst', 'Computer Engineer', 'Spring Boot Specialist', 'Back-End Engineer'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -65,6 +65,8 @@ function typeText() {
     }
 
     let speed = isDeleting ? deletingSpeed : typingSpeed;
+    typingElement.innerHTML += '<span style="visibility: hidden;">|</span>';
+
 
     if (!isDeleting && charIndex === currentRole.length) {
         speed = delayBetweenWords;
@@ -123,123 +125,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Carousel auto-scroll every 5 seconds
-let autoScrollIntervals = {};
-let currentIndices = { featured: 0, recent: 0 };
-
-function createIndicators(carouselId) {
-    const carousel = document.getElementById(carouselId + '-carousel');
-    const indicators = document.getElementById(carouselId + '-indicators');
-    const cardCount = carousel.children.length;
-
-    indicators.innerHTML = '';
-    for (let i = 0; i < cardCount; i++) {
-        const indicator = document.createElement('div');
-        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
-        indicator.onclick = () => scrollToIndex(carouselId, i);
-        indicators.appendChild(indicator);
-    }
-}
-
-function updateIndicators(carouselId) {
-    const carousel = document.getElementById(carouselId + '-carousel');
-    const indicators = document.getElementById(carouselId + '-indicators');
-    const scrollLeft = carousel.scrollLeft;
-    const cardWidth = carousel.clientWidth;
-    const currentIndex = Math.round(scrollLeft / cardWidth);
-
-    currentIndices[carouselId] = currentIndex;
-
-    Array.from(indicators.children).forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentIndex);
-    });
-}
-
-function scrollToIndex(carouselId, index) {
-    const carousel = document.getElementById(carouselId + '-carousel');
-    const cardWidth = carousel.clientWidth;
-
-    // Prevent overlapping scroll actions
-    if (carousel.dataset.isScrolling === 'true') return;
-    carousel.dataset.isScrolling = 'true';
-
-    carousel.scrollTo({
-        left: index * cardWidth,
-        behavior: 'smooth'
-    });
-
-    currentIndices[carouselId] = index;
-    updateIndicators(carouselId);
-
-    // Allow scrolling again after the animation completes
-    setTimeout(() => {
-        carousel.dataset.isScrolling = 'false';
-    }, 500); // Adjust this duration to match the smooth scroll animation time
-}
-
-function startAutoScroll(carouselId) {
-    const carousel = document.getElementById(carouselId + '-carousel');
-    const cardCount = carousel.children.length;
-
-    // Clear any existing interval to avoid overlapping
-    stopAutoScroll(carouselId);
-
-    autoScrollIntervals[carouselId] = setInterval(() => {
-        const nextIndex = (currentIndices[carouselId] + 1) % cardCount;
-        scrollToIndex(carouselId, nextIndex);
-    }, 5000); // Ensure this matches the desired interval (5 seconds)
-}
-
-function stopAutoScroll(carouselId) {
-    if (autoScrollIntervals[carouselId]) {
-        clearInterval(autoScrollIntervals[carouselId]);
-    }
-}
-
-// Initialize carousels
-function initCarousels() {
-    ['featured', 'recent'].forEach(carouselId => {
-        const carousel = document.getElementById(carouselId + '-carousel');
-
-        createIndicators(carouselId);
-        startAutoScroll(carouselId);
-
-        // Update indicators on scroll
-        carousel.addEventListener('scroll', () => {
-            updateIndicators(carouselId);
-        });
-
-        // Pause on hover
-        carousel.addEventListener('mouseenter', () => stopAutoScroll(carouselId));
-        carousel.addEventListener('mouseleave', () => startAutoScroll(carouselId));
-    });
-}
-
-// Initialize after DOM load
-window.addEventListener('DOMContentLoaded', initCarousels);
-
-// Carousel scroll function with manual control
-function scrollCarousel(carouselId, direction) {
-    const carousel = document.getElementById(carouselId + '-carousel');
-    const cardWidth = carousel.clientWidth;
-    const cardCount = carousel.children.length;
-
-    stopAutoScroll(carouselId);
-
-    let newIndex = currentIndices[carouselId] + direction;
-    if (newIndex < 0) newIndex = cardCount - 1;
-    if (newIndex >= cardCount) newIndex = 0;
-
-    carousel.scrollTo({
-        left: newIndex * cardWidth,
-        behavior: 'smooth'
-    });
-
-    currentIndices[carouselId] = newIndex;
-    updateIndicators(carouselId);
-
-    setTimeout(() => startAutoScroll(carouselId), 1000);
-}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

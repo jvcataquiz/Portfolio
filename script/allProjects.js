@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Add project info
                 const projectInfo = `
-                    <div class="project-card">
+                  
                       <div class="project-image">🤖</div>
                        <div class="project-info">
                         <h3>${repo.name}</h3>
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${repo.language ? `<span class="tag">${repo.language}</span>` : ''}
                         </div>
                         </div>
-                    </div>
+                  
                 `;
                 projectCard.innerHTML = projectInfo;
 
